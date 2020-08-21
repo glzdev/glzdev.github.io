@@ -1,0 +1,321 @@
+@font-face {
+  font-family: 'ProximaNovaBold';
+  src: url(../fonts/ProximaNovaBold.otf);
+}
+
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url(../fonts/ProximaNova-Regular.otf);
+}
+
+@font-face {
+  font-family: 'ProximaNovaLight';
+  src: url(../fonts/ProximaNovaAltLight.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+/* Header Logo*/
+body #site {
+  padding: 80px;
+  margin: 0 auto;
+}
+
+body #site #canvas {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1101px;
+}
+
+body #header {
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+body #header #headerInfo {
+  margin-bottom: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+body #header #headerInfo h1 {
+  font-size: 20px;
+  margin: 0 0 28px;
+}
+
+body #header #headerInfo h1 .placed-logo-image {
+  display: inline;
+}
+
+body #header #headerInfo h1 .placed-logo-image svg {
+  width: 350px; /* Original 400px */
+  height: auto;
+  max-width: 100%;
+}
+/* Navigation Bar */
+#headerInfo #navBlock nav {
+  margin: 0;
+  width: auto;
+  padding: 28px 0;
+  text-align: center;
+  border-top: 1px solid rgba(224, 224, 224, 0);
+  border-bottom: 1px solid rgba(224, 224, 224, 0);
+}
+
+#headerInfo #navBlock nav ul {
+  font-size: 13px;
+  line-height: 1.5em;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'ProximaNovaBold';
+}
+
+#headerInfo #navBlock nav ul li {
+  display: inline-block;
+  text-align: center;
+}
+
+#headerInfo #navBlock nav ul li a {
+  color: #666;
+  padding: 0.8em;
+  text-decoration: none;
+}
+/* -- ESTO ES UN AVANCE DONDE ME QUEDE ACTIVE LINKS -- */
+#header #navBlock nav .main-nav a.active-link {
+  color: #a8a8a8;
+}
+
+#header #navBlock nav ul li.active-link a {
+  color: #a8a8a8;
+}
+
+/* -- AVANCE DONDE ME QUEDE ACTIVE LINKS -- */
+
+#header #navBlock nav ul li  {
+  color: #666;
+}
+
+#headerInfo #navBlock nav ul li a:hover {
+  color: #a8a8a8;
+}
+
+nav select {
+  display: none;
+}
+
+/* Page Wrapper */
+#pageWrapper #page {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 0 100px;
+}
+
+#pageWrapper #page .sqs-block {
+  position: relative;
+  height: auto;
+  padding-top: 14px;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-bottom: 14px;
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
+}
+
+#pageWrapper #page .sqs-block .sqs-block-content p {
+  font-size: 19px;
+  color: #4a4a4a;
+  text-align: center;
+  font-family: 'ProximaNova-Regular';
+}
+
+#pageWrapper #page .sqs-block .content-privacy strong {
+  font-family: 'ProximaNova-Regular';
+}
+
+#pageWrapper #page .sqs-block .content-privacy p {
+  padding: 1em;
+  font-size: 19px;
+  color: #4a4a4a;
+  text-align: justify;
+  font-family: 'ProximaNova-Regular';
+}
+
+#pageWrapper #page .sqs-block .content-privacy ul li {
+  color: #4a4a4a;
+  font-size: 19px;
+  margin-left: 3.5em;
+  font-family: 'ProximaNova-Regular';
+}
+
+#pageWrapper #page .sqs-block .content-privacy ul li .link-service {
+  color: #4a4a4a;
+  font-size: 19px;
+  font-family: 'ProximaNova-Regular';
+}
+
+#pageWrapper #page .sqs-block .content-privacy p .link-service {
+  color: #4a4a4a;
+  font-size: 19px;
+  font-family: 'ProximaNova-Regular';
+}
+
+#pageWrapper #page .sqs-block .content-privacy .privacy-links-content {
+  padding-left: 17px;
+  padding-right: 17px;
+}
+
+#pageWrapper #page .sqs-block .content-privacy h3 a {
+  color: #fff;
+  border: 1px solid #272727 !important;
+  background-color: #272727;
+  padding: 3px 3px;
+  width: 135px;
+  margin: 11px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 2.6em;
+  font-family: 'ProximaNova-Regular';
+}
+
+#footer {
+  color: #777;
+  font-size: 14px;
+}
+
+#footer .social-links {
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+}
+
+#footer .social-links .sqs-svg-icon--wrapper {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#footer .social-links .sqs-use--icon {
+  fill: transparent;
+}
+
+#footer .sqs-use--mask {
+  fill: #999;
+}
+
+@media screen and (max-width: 414px) {
+  body #site {
+    padding: 80px 50px;
+    margin: 0 auto;
+  }
+
+  #headerInfo #navBlock nav ul {
+  display: none;
+}
+
+  nav.main-nav:before {
+    position: absolute;
+    top: 50%;
+    right: .5em;
+    margin-top: -.45em;
+  }
+
+  header:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  nav.main-nav select {
+    font-size: 13px;
+    color: #a8a8a8;
+    margin: 0;
+    width: 100%;
+    border: solid 0px transparent;
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    text-ident: .1px;
+    text-overflow: '';
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-family: 'ProximaNova-Regular';
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1em;
+  }
+
+  #pageWrapper #page .sqs-block .content-privacy p {
+    padding: 1em 0;
+    font-size: 19px;
+    color: #4a4a4a;
+    text-align: justify;
+    font-family: 'ProximaNova-Regular';
+  }
+
+  #pageWrapper #page .sqs-block {
+    position: relative;
+    height: auto;
+    padding-top: 14px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 14px;
+    outline: none;
+    box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0);
+  }
+
+  #pageWrapper #page .sqs-block .sqs-block-content {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #pageWrapper #page .sqs-block .sqs-block-content {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 823px) {
+  #pageWrapper #page .sqs-block .sqs-block-content {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 2560px) {
+  #pageWrapper #page .sqs-block .sqs-block-content {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
