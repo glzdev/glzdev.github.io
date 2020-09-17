@@ -171,6 +171,7 @@ nav select {
 
 #pageWrapper #page .sqs-block .content-privacy .privacy-links-content {
   padding-left: 17px;
+  display: inline-block;
   padding-right: 17px;
 }
 
@@ -316,6 +317,7 @@ nav select {
 @media screen and (max-width: 2560px) {
   #pageWrapper #page .sqs-block .sqs-block-content {
     margin: 0 auto;
+    text-align: center;
     width: fit-content;
   }
 }
