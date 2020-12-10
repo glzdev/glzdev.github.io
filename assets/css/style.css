@@ -181,7 +181,7 @@ nav select {
   padding-right: 5px;
 }
 
-#pageWrapper #page .sqs-block .privacy-links-content a img {
+#pageWrapper #page .sqs-block .sqs-block-content .privacy-links-content a img {
   width: 110px;
   height: 110px;
 }
