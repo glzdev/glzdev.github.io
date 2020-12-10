@@ -175,7 +175,7 @@ nav select {
   padding-right: 5px;
 }
 
-#pageWrapper #page .sqs-block .privacy-links-content {
+#pageWrapper #page .sqs-block .sqs-block-content .privacy-links-content {
   padding-left: 5px;
   display: inline-block;
   padding-right: 5px;
