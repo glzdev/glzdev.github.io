@@ -371,7 +371,7 @@ function T() {
     sZZM();
     stpInt();
     console.log(`No acertaste nada.`);
-    window.clearInterval(tL + 3)
+    clearInterval(tL + 3)
   }
 
   if (tL == 0 && !sSqrs.includes(wSqr) && !sSqrs.length == 0) {
