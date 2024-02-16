@@ -346,6 +346,7 @@ function T() {
     if (tL <= 0) {
       clearTimeout(timeout);
       //clearInterval(tL);
+      stpInt();
     }
   }
   
@@ -369,7 +370,7 @@ function T() {
     sZZM();
     stpInt();
     console.log(`No acertaste nada.`);
-    clearInterval(tL + 1)
+    clearInterval(tL + 2)
   }
 
   if (tL == 0 && !sSqrs.includes(wSqr) && !sSqrs.length == 0) {
@@ -379,14 +380,14 @@ function T() {
     sTAM();
     stpInt();
     console.log(`¡Bien hecho! Lograste conseguir ${sc} palabras de forma consecutiva`);
-    clearInterval(tL + 1)
+    clearInterval(tL + 2)
   }
 
   if (tL == 0 && sSqrs.includes(wSqr)) {
     sZSM();
     stpInt();
     console.log(`Lograste encontrar ${sc} palabras de forma no consecutiva.`);
-    clearInterval(tL + 1)
+    clearInterval(tL + 2)
   }
 }
 
