@@ -1,0 +1,1053 @@
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("../fonts/Montserrat-Bold.ttf"), url(./assets/fonts/Montserrat-Bold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("../fonts/Montserrat-Bold.ttf"), url(./assets/fonts/Montserrat-Bold.otf) format("opentype");
+}
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url("../fonts/Poppins-SemiBold.ttf"), url(./assets/fonts/Poppins-SemiBold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url("../fonts/Poppins-SemiBold.otf"), url(./assets/fonts/Poppins-SemiBold.otf) format("opentype");
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial;
+    color: var(--primary-color);
+}
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body.scroll {
+    overflow-y: unset;
+}
+body {
+    margin: 0 auto;
+    height: 100%;
+    overflow-y: hidden;
+    background-color: var(--bg-primary-color);
+    .system-module {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        .app-module {
+            height: 100%;
+            position: relative;
+            .app-module-game {
+                flex-direction: column;
+                display: flex;
+                height: 100%;
+                header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    flex-wrap: nowrap;
+                    height: 65px;
+                    border-bottom: 1px solid #f4f4f4;
+                    .app-header {
+                        font-size: 36px;
+                        text-align: center;
+                        flex-grow: 2;
+                        font-weight: 600;
+                        letter-spacing: 0.01em;
+                        left: 0;
+                        right: 0;
+                        pointer-events: none;
+                        position: relative;
+                        font-family: 'Montserrat-Bold';
+                    }
+                    .logo {
+                        height: 25px;
+                        margin: 10px auto 10px;
+                    }
+                }
+                .title-container {
+                    border-bottom: 1px solid var(--ln-secondary-color);
+                    h1 {
+                        font-weight: 600;
+                        margin: 0 0 0.5em;
+                        text-align: center;
+                        font-family: 'Montserrat-Bold';
+                        -webkit-font-smoothing: antialiased;
+                    }
+                }
+                .guess-grid {
+                    flex-grow: 1;
+                    display: flex;
+                    align-content: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    .time {
+                        margin: 16px auto;
+                        text-align: center;
+                    }
+                    .word {
+                        max-width: 90%;
+                        font-size: 2rem;
+                        font-weight: 500;
+                        margin: 0 auto 0;
+                        text-align: center;
+                        letter-spacing: 17px;
+                        text-transform: uppercase;
+                        font-family: 'Poppins-SemiBold';
+                    }
+                    .hint {
+                        max-width: 29em;
+                        margin: 1em auto;
+                        padding: 0 10px;
+                        text-align: center;
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                    .guess-word {
+                        display: flex;
+                        margin: 0 auto;
+                        max-width: 95%;
+                        font-size: 2rem;
+                        justify-content: center;
+                        div {
+                            width: 62px;
+                            height: 62px;
+                            display: flex;
+                            margin: 0.125em;
+                            align-items: center;
+                            box-sizing: border-box;
+                            justify-content: center;
+                            text-transform: uppercase;
+                            border: 2px solid var(--ln-primary-color);
+                            font-family: 'Poppins-SemiBold';
+                            transition: transform 250ms linear;
+                        }
+                        .tile[data-state='active'] {
+                            border-color: var(--at-primary-color);
+                        }
+                        .tile[data-state='correct'] {
+                            border: none;
+                            color: var(--bg-primary-color);
+                            background-color: var(--cr-primary-color);
+                        } 
+                        .tile.bounce {
+                            animation: bounce 0.1s ease-in-out forwards;
+                        }
+                        .tile.shake {
+                            animation: shake 250ms ease-in-out;
+                        }
+                        .tile.flip {
+                            transform: rotateX(90deg);
+                        }
+                        .tile.coloredA {
+                            animation: colored 0.1s ease-in-out forwards;
+                        }
+                    }
+                }
+                .keyboard {
+                    gap: 0.5em 0.375em; //original 0.375
+                    display: grid;
+                    justify-content: center;
+                    grid-auto-rows: 3.625rem;
+                    margin: 0 0.5rem 0.5rem;
+                    grid-template-columns: repeat(20, minmax(auto, 1.27em));
+                    .key {
+                        padding: 0;
+                        border: none;
+                        font-size: 1.10em; //0.95em
+                        display: flex;
+                        grid-column: span 2;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: var(--ln-primary-color);
+                        fill: var(--bg-primary-color);
+                        text-transform: uppercase;
+                        border-radius: .25em;
+                        cursor: pointer;
+                        user-select: none;
+                        font-family: 'Poppins-SemiBold';
+                        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+                    }
+                    .key.large {
+                        grid-column: span 3;
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+    }  
+}
+.alert-container {
+    top: 10vh;
+    left: 50vw;
+    z-index: 1;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(-50%);
+    .alert {
+        opacity: 1;
+        padding: .75em;
+        margin-bottom: .5em;
+        pointer-events: none;
+        border-radius: .25em;
+        background-color: var(--bg-secondary-color);
+        color: var(--bg-primary-color);
+        transition: opacity 500ms ease-in-out;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.alert.hide {
+    opacity: 0;
+}
+.layer {
+    top: 0;
+    left: 0;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--modal-z-index);
+    background-color: var(--bg-tertiary-color);
+    .final-container {
+        top: 10vh;
+        left: 50vw;
+        width: 480px;
+        z-index: 1;
+        opacity: 1;
+        display: flex;
+        position: fixed;
+        border-radius: 0.5rem;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-50%);
+        background-color: var(--bg-primary-color);
+        box-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.2);
+        .info-container {
+            padding: 32px 15px 25px 15px;
+            h4 {
+                text-align: center;
+                text-transform: uppercase;
+            }
+            .message-container {
+                margin: 0 35px;
+                p {
+                    text-align: center;
+                    line-height: 1.3rem;
+                    color: var(--pAfL-primary-color);
+                    a {
+                        text-decoration: none;
+                        color: var(--shA-primary-color);
+                    }
+                }
+            }
+            .bottom-container {
+                margin: 0 35px;
+                .bottom-info {
+                    color: #dfdfdf;
+                    border-bottom: 1px solid;
+                    border-top: 1px solid #dfdfdf;
+                    margin: 0 50px;
+                    p {
+                        color: #202020;
+                        text-align: center;
+                        line-height: 1.3rem;
+                        a {
+                            text-decoration: none;
+                            color: var(--shA-primary-color);
+                        }
+                    }
+                    #share-btn {
+                        width: 250px;
+                        padding: 14px;
+                        color: white;
+                        margin: 0 auto 21.28px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        font-size: 14px;
+                        text-align: center;
+                        border-radius: 24px;
+                        background-color: var(--shB-secondary-color);
+                    }
+                }
+                #button {
+                    width: 250px;
+                    padding: 14px;
+                    margin: 32px auto 0;
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 14px;
+                    text-align: center;
+                    border-radius: 26px;
+                    background: transparent;
+                    border: 1px solid var(--btn-bL-primary-color);
+                }
+            }
+        }
+    }
+    .how-to-play-container {
+        background-color: var(--bg-primary-color);
+        width: 480px;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.2);
+        left: 50vw;
+        position: fixed;
+        transform: translate(-50%);
+        .content-container {
+            padding: 32px;
+            position: relative;
+            .module-close-content {
+                background: none;
+                border: none;
+                padding: 0;
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                user-select: none;
+                cursor: pointer;
+            }
+            h1 {
+                font-size: 23px;
+                font-weight: 600;
+                margin: 29px 0 4px 0;
+            }
+            h2 {
+                margin: 0;
+                font-size: 17px;
+                font-weight: 500;
+            }
+            section {
+                ul {
+                    margin: 0;
+                    font-size: 16px;
+                    padding: 0 17px 17px;
+                    li {
+                        margin: 0 0 4px 0;
+                    }
+                }
+                .example-module {
+                    p {
+                        margin: 0;
+                        padding: 0 0 0.625em 0;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                    .exampleOne {
+                        max-width: 185px;
+                        p {
+                            width: 240px;
+                        }
+                    }
+                    .exampleTwo {
+                        max-width: 185px;
+                        margin: 10px 0 20px 0;
+                        p {
+                            width: 280px;
+                        }
+                    }
+                    .lastMessage {
+                        padding: 17px 0;
+                        border-top: 1px solid var(--ln-secondary-color);
+                        border-bottom: 1px solid var(--ln-secondary-color);
+                        p {
+                            margin: 0 0 10px 0;
+                        }
+                        .p-bottom {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.show-final-message {
+    opacity: 1 !important;
+    animation-name: bounceInBottom;
+    animation-duration: 0.4s;
+}
+.animateFadeIn {
+    animation-name: animateFadeIn;
+    animation-duration: 1.5s;
+}
+@keyframes animateFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes bounceInBottom {
+    0% {
+        transform: translate(-50%, 50%);
+    }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+        border-color: var(--ln-primary-color);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        border-color: var(--at-primary-color);
+    }
+}
+@keyframes shake {
+    10% {
+        transform: translateX(-5%);
+    }
+    30% {
+        transform: translateX(5%);
+    }
+    50% {
+        transform: translateX(-7.5%);
+    }
+    70% {
+        transform: translateX(7.5%);
+    }
+    90% {
+        transform: translateX(-5%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes colored {
+    0% {
+        transform: scale(1);
+        border: none;
+        color: var(--bg-primary-color);
+        background-color: var(--crW-primary-color);
+    }
+    50% {
+        transform: scale(1.1);
+        border: none;
+        color: var(--bg-primary-color);
+        background-color: var(--crW-primary-color);
+    }
+    100% {
+        transform: scale(1);
+        border: none;
+        color: var(--bg-primary-color);
+        background-color: var(--crW-primary-color);
+    }
+}
+:root {
+    --modal-z-index: 2000;
+    --primary-color: #202020;
+    --pAfL-primary-color: #787c7e;
+    --bg-primary-color: #ffffff;
+    --bg-secondary-color: #3c3c3c;
+    --bg-tertiary-color: rgba(255, 255, 255, 0.85);
+    --sh-primary-color: rgba(0, 0, 0, 0.2);
+    --btn-bL-primary-color: rgb(0 0 0 / 44%);
+    --shA-primary-color: #1d9BF0;
+    --shB-secondary-color: #419dd2;
+    --ln-primary-color: #d3d6da;
+    --ln-secondary-color: #dadada;
+    --cr-primary-color: #6aaa64;
+    --crW-primary-color: #ffdf6d;
+    --at-primary-color: #565758;
+}
+// Surface Pro 7 Landscape  ALL GOOD
+@media (width: 1368px) and (height: 912px) {
+    .layer {
+        .how-to-play-container {
+            top: 6vh;
+        }
+        .final-container {
+            top: 15vh;
+        }
+    }
+}
+// iPad Pro Landscape   ALL GOOD
+@media (width: 1366px) and (height: 1024px) {
+    .layer {
+        .how-to-play-container {
+            top: 10vh;
+        }
+        .final-container {
+            top: 20vh;
+        }
+    }
+}
+// iPad Pro 11" Landscape   ALL GOOD
+@media (width: 1194px) and (height: 834px) {
+    .layer {
+        .how-to-play-container {
+            top: 10vh;
+        }
+        .final-container {
+            top: 15vh;
+        }
+    }
+}
+// iPad Air Landscape   ALL GOOD
+@media (width: 1180px) and (height: 820px) {
+    .layer {
+        .how-to-play-container {
+            top: 9.5vh;
+        }
+    }
+}
+// iPad(6th gen) Landscape    ALL GOOD
+@media (width: 1133px) and (height: 744px) {
+    .layer {
+        .how-to-play-container {
+            top: 7vh;
+        }
+    }
+}
+// iPad Pro 10.5 Landscape  ALL GOOD
+@media (width: 1112px) and (height: 834px) {
+    .layer {
+        .how-to-play-container {
+            top: 10vh;
+        }
+        .final-container {
+            top: 15vh;
+        }
+    }
+}
+// iPad(9th gen) Landscape  ALL GOOD
+@media (width: 1080px) and (height: 811px) {
+    .layer {
+        .how-to-play-container {
+            top: 10vh;
+        }
+    }
+}
+// iPad Pro 12.9" (1st gen) - iPad Pro 12.9" (2nd gen) - iPad Pro 12.9" (3rd gen)
+//iPad Pro 12.9 "(4th gen) - iPad Pro 12.9 "(5th gen) - iPad Pro 12.9 "(6th gen)    ALL GOOD
+@media (max-width: 1025px) and (min-height: 1366px) {
+    .layer {
+        .how-to-play-container {
+            top: 20vh;
+        }
+        .final-container {
+            top: 25.5vh;
+        }
+    }
+}
+// Surface Pro 7    ALL GOOD
+@media (max-width: 913px) and (min-height: 1368px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 1.234em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 10vh;
+        }
+        .final-container {
+            top: 26vh;
+        }
+    }
+}
+// iPad Pro (10.5" 2017) - iPad Air(3rd gen 2019)   ALL GOOD
+@media (max-width: 835px) and (min-height: 1112px) {
+    .layer {
+        .how-to-play-container {
+            top: 15vw;
+        }
+        .final-container {
+            top: 22vh;
+        }
+    }
+}
+// iPad Pro 11" - iPad Pro (2nd gen 10.5") - iPad Pro(3rd gen 11") - iPad Air(3rd gen)
+// iPad Pro(4th gen 11") - iPad Pro(5th gen 11") - iPad Pro (6th gen 11")   ALL GOOD
+@media (max-width: 835px) and (min-height: 1194px) {
+    .layer {
+        .how-to-play-container {
+            top: 20vw;
+        }
+        .final-container {
+            top: 22vh;
+        }
+    }
+}
+// iPad Air(4th gen) - iPad Air(5th gen) - iPad (10th gen)  ALL GOOD
+@media (max-width: 821px) and (min-height: 1180px) {
+    .layer {
+        .how-to-play-container {
+            top: 20vw;
+        }
+    }
+}
+// iPad(7th gen) - iPad(8th gen) - iPad(9th gen)    ALL GOOD
+@media (max-width: 812px) and (min-height: 1080px) {
+    .layer {
+        .how-to-play-container {
+            top: 15vw;
+        }
+        .final-container {
+            top: 22vh;
+        }
+    }
+}
+// Samsung Galaxy Tab S7    ALL GOOD
+@media (max-width: 801px) and (min-height: 1280px) {
+    body {
+        background: orange;
+    }
+    .layer {
+        .how-to-play-container {
+            top: 20vw;
+        }
+        .final-container {
+            top: 26vh;
+        }
+    }
+}
+// iPad(6th gen - 5th gen) - iPad Pro(1st gen) - iPad Mini(2019) - iPad Air 2 - iPad Mini 3
+// iPad Air - iPad Mini(5th gen) - iPad Mini(6th gen)   ALL GOOD
+@media (max-width: 769px) and (min-height: 1024px) {
+    .layer {
+        .how-to-play-container {
+            top: 11vw;
+        }
+        .final-container {
+            top: 20vh;
+        }
+    }
+}
+// iPad(6th gen)    ALL GOOD
+@media (max-width: 745px) and (min-height: 1133px) {
+    .layer {
+        .how-to-play-container {
+            top: 15vw;
+        }
+    }
+}
+// Surface Duo Landscape    ALL GOOD
+@media (width: 720px) and (height: 540px) {
+    .layer {
+        .how-to-play-container {
+            top: 2.5vh;
+            height: 95%;
+            overflow-y: auto;
+        }
+    }
+}
+// Surface Duo  ALL GOOD
+@media (max-width: 541px) and (min-height: 720px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 1.234em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 2vh;
+        }
+        .final-container {
+            top: 10vh;
+        }
+    }
+}
+
+// iPhone 14 Pro Max    ALL GOOD
+@media (max-width: 431px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.935em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            width: 390px;
+            top: 6vh;
+        }
+        .final-container {
+            width: 380px;
+            left: 49.9vw;
+            top: 15vh;
+        }
+    }
+}
+// iPhone 12 Pro Max - iPhone 13 Pro Max - iPhone 14 Plus   ALL GOOD
+@media (max-width: 429px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.929em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            width: 390px;
+            top: 6vh;
+        }
+        .final-container {
+            width: 380px;
+            left: 50.1vw;
+            top: 15vh;
+        }
+    }
+}
+// iPhone 6/7/8 Plus - iPhone XR - iPhone XS Max    ALL GOOD
+@media (max-width: 415px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.885em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            width: 390px;
+            top: 6vh;
+        }
+        .final-container {
+            width: 380px;
+            top: 15vh;
+            left: 50.1vw;
+        }
+    }
+}
+// Samsung Galaxy A32 - Samsung Galaxy A51/71 - Samsung Galaxy S20 Ultra
+// Samsung Galaxy Note20(2020) - Samsung Galaxy A31(2020)   ALL GOOD
+@media (max-width: 413px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        margin: 0 0.2rem 0.5rem;
+                        grid-template-columns: repeat(20, minmax(auto, 0.899em)); //0.879em
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 6vh;
+            width: 390px;
+        }
+        .final-container {
+            top: 15vh;
+            width: 390px;
+        }
+    }
+}
+// Pixel 5 - Pixel 4 - Pixel 3 XL - Pixel 3 - iPhone 14 Pro - Xiaomi    ALL GOOD
+@media (max-width: 394px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .alert-container {
+                        left: 49vw;
+                        transform: translateX(-48%);
+                    }
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.82em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 6vh;
+            width: 360px;
+            left: 49.8vw;
+        }
+        .final-container {
+            top: 15vh;
+            width: 375px;
+            left: 50.1vw;
+        }
+    }
+}
+// Huawei Mate 30 Pro   ALL GOOD
+@media (width: 392px) and (height: 800px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .alert-container {
+                        left: 49vw;
+                        transform: translateX(-48.9%);
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.817em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 3vh;
+        }
+        .final-container {
+            top: 10vh;
+        }
+    }
+}
+// iPhone 12 - iPhone 12 Pro - iPhone 13 - iPhone 13 Pro - iPhone 14    ALL GOOD
+@media (max-width: 391px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .alert-container {
+                        left: 49vw;
+                        transform: translateX(-49%);
+                    }
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.81em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 3vh;
+            left: 49.88vw;
+            width: 360px;
+        }
+        .final-container {
+            top: 15vh;
+            width: 360px;
+        }
+    }
+}
+// Samsung Galaxy A10s - Samsung Galaxy S21 Plus(2021)  ALL GOOD
+@media (max-width: 385px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .alert-container {
+                        left: 48vw;
+                        transform: translateX(-46.3%);
+                    }
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.791em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 3vh;
+            width: 360px;
+        }
+        .final-container {
+            top: 10vh;
+            width: 360px;
+        }
+    }
+}
+// iPhone 6s - iPhone 6/7/8 - iPhone SE(2020) - iPhone SE(2022) - iPhone X  ALL GOOD
+@media (max-width: 376px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .alert-container {
+                        left: 47vw;
+                        transform: translateX(-44.5%);
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.763em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 6vh;
+            width: 360px;
+            overflow-y: auto;
+        }
+        .final-container {
+            top: 10vh;
+            left: 49.8vw;
+        }
+    }
+}
+// Samsung J7 Neo   ALL GOOD
+@media (width: 360px) and (height: 560px) {
+    body {
+        .layer {
+            .how-to-play-container {
+                top: 1vh;
+                height: 98%;
+            }
+        }
+    }
+}
+// Samsung J7 Neo - Samsung Galaxy S8 - Samsung Galaxy S8+ - Samsung Galaxy S21(2021) - Samsung Galaxy S20(2020) - OPPO - Huawei
+// iPhone 12 Mini - iPhone 13 Mini  ALL GOOD
+@media (max-width: 361px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .alert-container {
+                        left:  44vw;
+                        transform: translateX(-39.1%);
+                    }
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.716em));
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 3vh;
+            left: 50.1vw;
+            width: 340px;
+            overflow-y: auto;
+        }
+        .final-container {
+            top: 10vh;
+            left: 49.87vw;
+            width: 345px;
+        }
+    }
+}
+// Samsung Galaxy S9+ - iPhone SE(2016) - iPhone 5  ALL GOOD
+@media (max-width: 321px) {
+    body {
+        .system-module {
+            .app-module {
+                .app-module-game {
+                    .alert-container {
+                        left:  38vw;
+                        transform: translateX(-30.50%);
+                    }
+                    header {
+                        height: auto;
+                    }
+                    .keyboard {
+                        grid-template-columns: repeat(20, minmax(auto, 0.591em));
+                        .key.large {
+                            font-size: 0.813rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .layer {
+        .how-to-play-container {
+            top: 1vh;
+            width: 305px;
+            height: 98%;
+            left: 49.84vw;
+            overflow-y: auto;
+            .content-container {
+                section {
+                    .example-module {
+                        .exampleOne {
+                            p {
+                                width: 150px;
+                            }
+                        }
+                        .exampleTwo {
+                            p {
+                                width: 150px;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .final-container {
+            top: 10vh;
+            width: 300px;
+            left: 49.85vw;
+        }
+    }
+}

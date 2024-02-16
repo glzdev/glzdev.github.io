@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta property="description" content="¿Cuántas palabras en forma consecutiva puedes encontrar?... Encuentra la palabra oculta antes de que los 60 segundos terminen.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/moshiy.ico">
+    <script defer src="assets/js/wl.js"></script>
+    <script defer src="assets/js/app.js"></script>
+    <title>Moshiy - Encuentra la palabra</title>
+</head>
+<body class="scroll">
+    <div>
+        <div class="system-module">
+            <div class="app-module">
+                <div class="app-module-game">
+                    <div data-alert-container class="alert-container"></div>
+                    <header>
+                        <!-- <div class="app-header">Moshiy</div> -->
+                        <div class="logo">
+                            <svg width="100%" height="100%" viewBox="0 0 1347 232" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                                <g transform="matrix(1,0,0,1,-159.958,-717.58)">
+                                    <path d="M159.958,944.635L159.958,722.032L211.793,722.032L304.014,873.402L276.666,873.402L366.343,722.032L418.178,722.032L418.814,944.635L360.937,944.635L360.301,810.119L370.159,810.119L303.06,922.693L275.076,922.693L206.069,810.119L218.153,810.119L218.153,944.635L159.958,944.635Z" style="fill:rgb(35,31,32);fill-rule:nonzero;"/>
+                                </g>
+                                <g transform="matrix(1,0,0,1,-159.958,-717.58)">
+                                    <path d="M699.908,782.032C699.908,766.119 693.587,750.858 682.334,739.606C671.082,728.353 655.821,722.032 639.908,722.032L512.179,722.032C496.266,722.032 481.005,728.353 469.753,739.606C458.5,750.858 452.179,766.119 452.179,782.032L452.179,884.635C452.179,900.548 458.5,915.809 469.753,927.061C481.005,938.314 496.266,944.635 512.179,944.635L639.908,944.635C655.821,944.635 671.082,938.314 682.334,927.061C693.587,915.809 699.908,900.548 699.908,884.635L699.908,782.032Z" style="fill:rgb(254,223,110);"/>
+                                </g>
+                                <g transform="matrix(1,0,0,1,-159.958,-717.58)">
+                                    <path d="M810.454,949.087C792.221,949.087 774.678,946.808 757.824,942.25C740.97,937.692 727.242,931.809 716.642,924.601L737.312,878.172C747.277,884.532 758.778,889.779 771.816,893.913C784.854,898.047 797.839,900.114 810.772,900.114C819.464,900.114 826.46,899.319 831.76,897.729C837.06,896.139 840.929,894.019 843.367,891.369C845.805,888.719 847.024,885.592 847.024,881.988C847.024,876.9 844.692,872.872 840.028,869.904C835.364,866.936 829.322,864.498 821.902,862.59C814.482,860.682 806.267,858.774 797.256,856.866C788.246,854.958 779.236,852.52 770.226,849.552C761.216,846.584 753.001,842.714 745.581,837.944C738.161,833.174 732.118,826.92 727.454,819.182C722.79,811.444 720.458,801.639 720.458,789.767C720.458,776.41 724.115,764.326 731.429,753.514C738.744,742.702 749.715,734.01 764.343,727.438C778.971,720.866 797.203,717.58 819.04,717.58C833.668,717.58 848.031,719.223 862.129,722.509C876.228,725.795 888.789,730.618 899.813,736.978L880.415,783.725C869.814,778.001 859.32,773.707 848.932,770.845C838.544,767.983 828.474,766.552 818.722,766.552C810.03,766.552 803.033,767.453 797.733,769.255C792.433,771.057 788.617,773.442 786.285,776.41C783.953,779.379 782.787,782.771 782.787,786.587C782.787,791.463 785.066,795.332 789.624,798.194C794.182,801.056 800.224,803.388 807.751,805.19C815.277,806.992 823.545,808.847 832.555,810.755C841.565,812.663 850.575,815.048 859.585,817.91C868.595,820.772 876.811,824.588 884.231,829.358C891.651,834.128 897.64,840.382 902.198,848.121C906.756,855.859 909.035,865.558 909.035,877.218C909.035,890.15 905.378,902.075 898.064,912.994C890.75,923.912 879.832,932.657 865.309,939.229C850.787,945.801 832.502,949.087 810.454,949.087Z" style="fill-rule:nonzero;"/>
+                                </g>
+                                <g transform="matrix(1,0,0,1,-159.958,-717.58)">
+                                    <path d="M1086.69,722.032L1149.65,722.032L1149.65,944.635L1086.69,944.635L1086.69,722.032ZM1000.83,944.635L937.864,944.635L937.864,722.032L1000.83,722.032L1000.83,944.635ZM1091.14,857.82L996.377,857.82L996.377,805.667L1091.14,805.667L1091.14,857.82Z" style="fill-rule:nonzero;"/>
+                                </g>
+                                <g transform="matrix(1,0,0,1,-159.958,-717.58)">
+                                    <rect x="1194.59" y="722.032" width="62.965" height="222.603"/>
+                                </g>
+                                <g transform="matrix(1,0,0,1,-159.958,-717.58)">
+                                    <path d="M1358.52,944.635L1358.52,850.506L1373.15,888.348L1273.61,722.032L1340.08,722.032L1411.94,842.555L1373.47,842.555L1445.65,722.032L1506.71,722.032L1407.49,888.348L1421.49,850.506L1421.49,944.635L1358.52,944.635Z" style="fill-rule:nonzero;"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </header>
+                    <div class="guess-grid">
+                        <p class="time">Tiempo restante: <span><b></b>s</span></p>
+                        <p class="word animateFadeIn" id="word"></p>
+                        <p class="hint"><span></span></p>
+                        <div data-guess-grid class="guess-word"></div>
+                    </div>
+                    <div data-keyboard class="keyboard">
+                        <button class="key" data-key="Q">Q</button>
+                        <button class="key" data-key="W">W</button>
+                        <button class="key" data-key="E">E</button>
+                        <button class="key" data-key="R">R</button>
+                        <button class="key" data-key="T">T</button>
+                        <button class="key" data-key="Y">Y</button>
+                        <button class="key" data-key="U">U</button>
+                        <button class="key" data-key="I">I</button>
+                        <button class="key" data-key="O">O</button>
+                        <button class="key" data-key="P">P</button>
+                        <button class="key" data-key="A">A</button>
+                        <button class="key" data-key="S">S</button>
+                        <button class="key" data-key="D">D</button>
+                        <button class="key" data-key="F">F</button>
+                        <button class="key" data-key="G">G</button>
+                        <button class="key" data-key="H">H</button>
+                        <button class="key" data-key="J">J</button>
+                        <button class="key" data-key="K">K</button>
+                        <button class="key" data-key="L">L</button>
+                        <button class="key" data-key="Ñ">Ñ</button>
+                        <button data-enter class="key large">Enter</button>
+                        <button class="key" data-key="Z">Z</button>
+                        <button class="key" data-key="X">X</button>
+                        <button class="key" data-key="C">C</button>
+                        <button class="key" data-key="V">V</button>
+                        <button class="key" data-key="B">B</button>
+                        <button class="key" data-key="N">N</button>
+                        <button class="key" data-key="M">M</button>
+                        <button data-delete class="key large">«</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
