@@ -8,7 +8,7 @@ const tT = document.querySelector(".time b"),
 let cW = {},
   sc = 0,
   wC = 0,
-  tL = 20,
+  tL = 10,
   mW = 410, //410 original max words
   lSpcs,
   rW,
@@ -22,7 +22,7 @@ let timeout, timer_on = 0;
 
 function gNWD() {
   if (aWs.length == 0 || wC >= mW) {
-    clearTimeout(t);
+    //clearTimeout(t);
     /* if (sc < 4) {
       sTAM();
     } */
@@ -337,8 +337,7 @@ function gATs() {
   return gG.querySelectorAll('[data-state="active"]');
 }
 
-function T() {
-  function timedCount() {
+function timedCount() {
     tL--
     tT.innerText = tL;
     timeout = setTimeout(timedCount, 1000);
@@ -359,6 +358,8 @@ function T() {
 
   startCount();
 
+function T() {
+  
   /* tL = tL - 1;
   if (tL >= 0) {
     tT.innerText = tL;
@@ -370,7 +371,7 @@ function T() {
     sZZM();
     stpInt();
     console.log(`No acertaste nada.`);
-    clearInterval(tL + 2)
+    clearInterval(tL + 3)
   }
 
   if (tL == 0 && !sSqrs.includes(wSqr) && !sSqrs.length == 0) {
@@ -380,14 +381,14 @@ function T() {
     sTAM();
     stpInt();
     console.log(`¡Bien hecho! Lograste conseguir ${sc} palabras de forma consecutiva`);
-    clearInterval(tL + 2)
+    clearInterval(tL + 3)
   }
 
   if (tL == 0 && sSqrs.includes(wSqr)) {
     sZSM();
     stpInt();
     console.log(`Lograste encontrar ${sc} palabras de forma no consecutiva.`);
-    clearInterval(tL + 2)
+    clearInterval(tL + 3)
   }
 }
 
