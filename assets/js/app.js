@@ -371,6 +371,7 @@ function T() {
     sZZM();
     stpInt();
     console.log(`No acertaste nada.`);
+    setInterval(tL)
     clearInterval(tL + 3)
   }
 
