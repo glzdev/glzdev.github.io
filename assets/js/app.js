@@ -344,7 +344,7 @@ function timedCount() {
     console.log(tL)
     if (tL <= 0) {
       clearTimeout(timeout);
-      clearInterval(tL + 3);
+      //clearInterval(tL + 3);
       stpInt();
     }
   }
