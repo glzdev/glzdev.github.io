@@ -337,7 +337,17 @@ function gATs() {
   return gG.querySelectorAll('[data-state="active"]');
 }
 
-function timedCount() {
+
+
+function T() {
+  /* tL = tL - 1;
+  if (tL >= 0) {
+    tT.innerText = tL;
+    clearInterval(tL + 1);
+  } */
+  //console.log(sSqrs)
+
+  function timedCount() {
     tL--
     tT.innerText = tL;
     timeout = setTimeout(timedCount, 1000);
@@ -357,15 +367,6 @@ function timedCount() {
   }
 
   startCount();
-
-function T() {
-  
-  /* tL = tL - 1;
-  if (tL >= 0) {
-    tT.innerText = tL;
-    clearInterval(tL + 1);
-  } */
-  //console.log(sSqrs)
 
   if (tL == 0 && sSqrs.length == 0) {
     sZZM();
