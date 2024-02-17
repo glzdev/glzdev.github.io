@@ -367,7 +367,9 @@ function T() {
   } */
   //console.log(sSqrs)
 
-  if (tL == 0 && sSqrs.length == 0) {
+  
+}
+if (tL == 0 && sSqrs.length == 0) {
     sZZM();
     stpInt();
     console.log(`No acertaste nada.`);
@@ -390,7 +392,6 @@ function T() {
     console.log(`Lograste encontrar ${sc} palabras de forma no consecutiva.`);
     clearInterval(tL + 3)
   }
-}
 
 function hTP() {
   function elementFromHTML(html) {
