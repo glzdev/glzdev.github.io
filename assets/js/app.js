@@ -495,6 +495,7 @@ function sZZM() {
   });
 
   document.body.appendChild(msg);
+  clearInterval(tL + 3)
 }
 
 function sZSM() {
