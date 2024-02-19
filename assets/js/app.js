@@ -8,7 +8,7 @@ const tT = document.querySelector(".time b"),
 let cW = {},
   sc = 0,
   wC = 0,
-  tL = 15,
+  tL = 20,
   mW = 410, //410 original max words
   lSpcs,
   rW,
@@ -52,7 +52,7 @@ function gNWD() {
     gG.append(rE);
   });
   sInt();
-  console.log(wD)
+  //console.log(wD)
 }
 
 function sInt() {
@@ -475,7 +475,7 @@ function sZZM() {
             <div class="info-container">
                 <h4>Staff</h4>
                 <div class="message-container">
-                    <p><a href="https://twitter.com/eduardozlg" target="_blank">@eduardozlg</a></p>
+                    <p><a href="https://x.com" target="_blank">@**********</a></p>
                 </div>
                 <div class="bottom-container">
                     <div class="bottom-info">
@@ -510,7 +510,7 @@ function sZSM() {
             <div class="info-container">
                 <h4>Staff</h4>
                 <div class="message-container">
-                    <p><a href="https://twitter.com/eduardozlg" target="_blank">@eduardozlg</a></p>
+                    <p><a href="https://x.com" target="_blank">@**********</a></p>
                 </div>
                 <div class="bottom-container">
                     <div class="bottom-info">
@@ -546,7 +546,7 @@ function sTAM() {
             <div class="info-container">
                 <h4>Staff</h4>
                 <div class="message-container">
-                    <p><a href="https://twitter.com/eduardozlg" target="_blank">@eduardozlg</a></p>
+                    <p><a href="https://x.com" target="_blank">@**********</a></p>
                 </div>
                 <div class="bottom-container">
                     <div class="bottom-info">
@@ -582,7 +582,7 @@ function sFM() {
             <div class="info-container">
                 <h4>Staff</h4>
                 <div class="message-container">
-                    <p><a href="https://twitter.com/eduardozlg" target="_blank">@eduardozlg</a></p>
+                    <p><a href="https://x.com" target="_blank">@**********</a></p>
                 </div>
                 <div class="bottom-container">
                     <div class="bottom-info">
@@ -611,7 +611,7 @@ function r() {
   window.location.reload();
 }
 
-function gSH() {
+/* function gSH() {
   if (sc == 410) {
     window.open(
       `https://twitter.com/intent/tweet?url=¡Felicidades!%0a%0a%23Moshiy / ${sc}x en forma consecutiva.%0a%0a${slts}%0a%0aCon un tiempo restante de ${tL}s.`,
@@ -621,7 +621,7 @@ function gSH() {
   } else {
     window.open(`https://twitter.com/intent/tweet?url=%23Moshiy / ${sc}x en forma consecutiva.%0a%0a${slts}`);
   }
-}
+} */
 
 const sG = () => {
   wC = 0;
