@@ -225,7 +225,7 @@ function suG() {
         sSqrs.splice(pos, 1, "%0a");
       }
     }
-    console.log(slts);
+    //console.log(slts);
     return;
   }
 
