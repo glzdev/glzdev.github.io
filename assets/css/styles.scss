@@ -178,6 +178,16 @@ body {
                         font-size: 0.875rem;
                     }
                 }
+                .ad-block {
+                    height: 50px;
+                    width: 300px;
+                    margin: 0 auto;
+                    background-color: orange;
+                    h2 {
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
             }
         }
     }  
@@ -467,8 +477,8 @@ body {
     --bg-tertiary-color: rgba(255, 255, 255, 0.85);
     --sh-primary-color: rgba(0, 0, 0, 0.2);
     --btn-bL-primary-color: rgb(0 0 0 / 44%);
-    --shA-primary-color: #1d9BF0;
-    --shB-secondary-color: #419dd2;
+    --shA-primary-color: #536571; //#536571 Original: #1d9BF0
+    --shB-secondary-color: #0e1418; //#0e1418 Original: #419dd2
     --ln-primary-color: #d3d6da;
     --ln-secondary-color: #dadada;
     --cr-primary-color: #6aaa64;

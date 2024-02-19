@@ -8,7 +8,7 @@ const tT = document.querySelector(".time b"),
 let cW = {},
   sc = 0,
   wC = 0,
-  tL = 10,
+  tL = 15,
   mW = 410, //410 original max words
   lSpcs,
   rW,
@@ -337,10 +337,9 @@ function gATs() {
   return gG.querySelectorAll('[data-state="active"]');
 }
 
-
-
 function T() {
   /* tL = tL - 1;
+  console.log(tL)
   if (tL >= 0) {
     tT.innerText = tL;
     clearInterval(tL + 1);
@@ -351,11 +350,35 @@ function T() {
     tL--
     tT.innerText = tL;
     timeout = setTimeout(timedCount, 1000);
-    console.log(tL)
-    if (tL <= 0) {
+    // lo puedo volver a poner para ver si el contador no se pasa del 0 console.log(tL)
+    /* if (tL <= 0) {
       clearTimeout(timeout);
-      //clearInterval(tL + 3);
       stpInt();
+    } */
+    if (tL == 0 && sSqrs.length == 0) {
+      sZZM();
+      stpInt();
+      clearTimeout(timeout)
+      console.log(`No acertaste nada.`);
+      //clearInterval(tL + 3)
+    }
+    if (tL == 0 && !sSqrs.includes(wSqr) && !sSqrs.length == 0) {
+      // SERIA MODIFICAR ESTA CONDICIONAL SOLAMENTE DE MOMENTO ES LA QUE MODIFICARÉ
+      /* sTAM();
+      stpInt(); */
+      sTAM();
+      stpInt();
+      clearTimeout(timeout)
+      console.log(`¡Bien hecho! Lograste conseguir ${sc} palabras de forma consecutiva`);
+      //clearInterval(tL + 3)
+    }
+  
+    if (tL == 0 && sSqrs.includes(wSqr)) {
+      sZSM();
+      stpInt();
+      clearTimeout(timeout)
+      console.log(`Lograste encontrar ${sc} palabras de forma no consecutiva.`);
+      //clearInterval(tL + 3)
     }
   }
   
@@ -365,32 +388,8 @@ function T() {
       timedCount();
     }
   }
-
+  
   startCount();
-
-  if (tL == 0 && sSqrs.length == 0) {
-    sZZM();
-    stpInt();
-    console.log(`No acertaste nada.`);
-    clearInterval(tL + 3)
-  }
-
-  if (tL == 0 && !sSqrs.includes(wSqr) && !sSqrs.length == 0) {
-    // SERIA MODIFICAR ESTA CONDICIONAL SOLAMENTE DE MOMENTO ES LA QUE MODIFICARÉ
-    /* sTAM();
-    stpInt(); */
-    sTAM();
-    stpInt();
-    console.log(`¡Bien hecho! Lograste conseguir ${sc} palabras de forma consecutiva`);
-    clearInterval(tL + 3)
-  }
-
-  if (tL == 0 && sSqrs.includes(wSqr)) {
-    sZSM();
-    stpInt();
-    console.log(`Lograste encontrar ${sc} palabras de forma no consecutiva.`);
-    clearInterval(tL + 3)
-  }
 }
 
 function hTP() {
@@ -454,7 +453,7 @@ function hTP() {
       const finalContainer = document.querySelector(".how-to-play-container");
       finalContainer.classList.add("show-final-message");
     });
-
+    
     document.getElementById("close").onclick = function () {
       let el = document.querySelector(".layer");
       el.remove();
@@ -496,7 +495,6 @@ function sZZM() {
   });
 
   document.body.appendChild(msg);
-  clearInterval(tL + 3)
 }
 
 function sZSM() {
