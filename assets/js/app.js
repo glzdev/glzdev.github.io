@@ -8,7 +8,7 @@ const tT = document.querySelector(".time b"),
 let cW = {},
   sc = 0,
   wC = 0,
-  tL = 20,
+  tL = 60,
   mW = 410, //410 original max words
   lSpcs,
   rW,
