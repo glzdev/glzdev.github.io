@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta
+            name="description"
+            content="¿Cuántas palabras en forma consecutiva puedes encontrar?... Encuentra la palabra oculta antes de que los 60 segundos terminen."
+        />
+        <link rel="stylesheet" href="assets/css/m.css" />
+        <script defer src="assets/js/w.js"></script>
+        <script defer src="assets/js/a.js"></script>
+        <title>Moshiy - Encuentra la palabra</title>
+    </head>
+    <body class="scroll">
+        <div>
+            <div class="system-module">
+                <div class="app-module">
+                    <div class="app-module-game">
+                        <div data-alert-container class="alert-container"></div>
+                        <header>
+                            <svg width="100%" height="100%" class="logo" viewBox="0 0 1254 237" version="1.1" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                                <g id="Primary-logo" serif:id="Primary logo" transform="matrix(3.14805,0,0,3.14805,-160.012,-668.512)">
+                                    <g transform="matrix(1,0,0,1,-15.2511,77.2676)">
+                                        <path d="M66.401,137.082L66.401,208.482L81.101,208.482L81.101,158.382L81.301,158.382L98.801,208.482L110.901,208.482L128.401,157.882L128.601,157.882L128.601,208.482L143.301,208.482L143.301,137.082L121.201,137.082L105.401,186.182L105.201,186.182L88.501,137.082L66.401,137.082Z" style="fill-rule:nonzero;"/>
+                                        <path d="M245.601,184.782L230.401,184.782C230.334,189.182 231.134,192.982 232.801,196.182C234.468,199.382 236.718,202.016 239.551,204.082C242.384,206.149 245.651,207.666 249.351,208.632C253.051,209.599 256.868,210.082 260.801,210.082C265.668,210.082 269.951,209.516 273.651,208.382C277.351,207.249 280.451,205.666 282.951,203.632C285.451,201.599 287.334,199.182 288.601,196.382C289.868,193.582 290.501,190.549 290.501,187.282C290.501,183.282 289.651,179.999 287.951,177.432C286.251,174.866 284.234,172.816 281.901,171.282C279.568,169.749 277.218,168.632 274.851,167.932C272.484,167.232 270.634,166.749 269.301,166.482C264.834,165.349 261.218,164.416 258.451,163.682C255.684,162.949 253.518,162.216 251.951,161.482C250.384,160.749 249.334,159.949 248.801,159.082C248.268,158.216 248.001,157.082 248.001,155.682C248.001,154.149 248.334,152.882 249.001,151.882C249.668,150.882 250.518,150.049 251.551,149.382C252.584,148.716 253.734,148.249 255.001,147.982C256.268,147.716 257.534,147.582 258.801,147.582C260.734,147.582 262.518,147.749 264.151,148.082C265.784,148.416 267.234,148.982 268.501,149.782C269.768,150.582 270.784,151.682 271.551,153.082C272.318,154.482 272.768,156.249 272.901,158.382L288.101,158.382C288.101,154.249 287.318,150.732 285.751,147.832C284.184,144.932 282.068,142.549 279.401,140.682C276.734,138.816 273.684,137.466 270.251,136.632C266.818,135.799 263.234,135.382 259.501,135.382C256.301,135.382 253.101,135.816 249.901,136.682C246.701,137.549 243.834,138.882 241.301,140.682C238.768,142.482 236.718,144.732 235.151,147.432C233.584,150.132 232.801,153.316 232.801,156.982C232.801,160.249 233.418,163.032 234.651,165.332C235.884,167.632 237.501,169.549 239.501,171.082C241.501,172.616 243.768,173.866 246.301,174.832C248.834,175.799 251.434,176.616 254.101,177.282C256.701,178.016 259.268,178.682 261.801,179.282C264.334,179.882 266.601,180.582 268.601,181.382C270.601,182.182 272.218,183.182 273.451,184.382C274.684,185.582 275.301,187.149 275.301,189.082C275.301,190.882 274.834,192.366 273.901,193.532C272.968,194.699 271.801,195.616 270.401,196.282C269.001,196.949 267.501,197.399 265.901,197.632C264.301,197.866 262.801,197.982 261.401,197.982C259.334,197.982 257.334,197.732 255.401,197.232C253.468,196.732 251.784,195.966 250.351,194.932C248.918,193.899 247.768,192.549 246.901,190.882C246.034,189.216 245.601,187.182 245.601,184.782Z" style="fill-rule:nonzero;"/>
+                                        <path d="M299.801,137.082L299.801,208.482L315.501,208.482L315.501,177.682L344.401,177.682L344.401,208.482L360.101,208.482L360.101,137.082L344.401,137.082L344.401,164.482L315.501,164.482L315.501,137.082L299.801,137.082Z" style="fill-rule:nonzero;"/>
+                                        <rect x="373.901" y="137.082" width="15.7" height="71.4" style="fill-rule:nonzero;"/>
+                                        <path d="M421.901,180.682L421.901,208.482L437.601,208.482L437.601,181.082L464.101,137.082L446.601,137.082L430.001,165.282L413.301,137.082L395.701,137.082L421.901,180.682Z" style="fill-rule:nonzero;"/>
+                                    </g>
+                                    <g transform="matrix(0.939805,0,0,0.939805,7.53993,15.0488)">
+                                        <circle cx="176.962" cy="250" r="37.35" style="fill:rgb(254,223,110);"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </header>
+                        <div class="guess-grid">
+                            <p class="time">
+                                <span><b></b>s<span></span> restantes.
+                            </p>
+                            <p class="word animateFadeIn" id="word"></p>
+                            <p class="hint"><span></span></p>
+                            <div data-guess-grid class="guess-word"></div>
+                        </div>
+                        <div data-keyboard class="keyboard">
+                            <button class="key" data-key="Q">Q</button>
+                            <button class="key" data-key="W">W</button>
+                            <button class="key" data-key="E">E</button>
+                            <button class="key" data-key="R">R</button>
+                            <button class="key" data-key="T">T</button>
+                            <button class="key" data-key="Y">Y</button>
+                            <button class="key" data-key="U">U</button>
+                            <button class="key" data-key="I">I</button>
+                            <button class="key" data-key="O">O</button>
+                            <button class="key" data-key="P">P</button>
+                            <button class="key" data-key="A">A</button>
+                            <button class="key" data-key="S">S</button>
+                            <button class="key" data-key="D">D</button>
+                            <button class="key" data-key="F">F</button>
+                            <button class="key" data-key="G">G</button>
+                            <button class="key" data-key="H">H</button>
+                            <button class="key" data-key="J">J</button>
+                            <button class="key" data-key="K">K</button>
+                            <button class="key" data-key="L">L</button>
+                            <button class="key" data-key="Ñ">Ñ</button>
+                            <button data-enter class="key large">Enter</button>
+                            <button class="key" data-key="Z">Z</button>
+                            <button class="key" data-key="X">X</button>
+                            <button class="key" data-key="C">C</button>
+                            <button class="key" data-key="V">V</button>
+                            <button class="key" data-key="B">B</button>
+                            <button class="key" data-key="N">N</button>
+                            <button class="key" data-key="M">M</button>
+                            <button data-delete class="key large">«</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
