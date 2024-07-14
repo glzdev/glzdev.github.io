@@ -413,9 +413,9 @@ function hTP() {
                             <p>Tendrás 45 segundos para encontrar la primer palabra con ayuda de una pista por cada palabra.</p>
                             <p class="p-bottom">Y con cada palabra que encuentres, agregarás 7 segundos al tiempo limite.</p>
                         </div>
-                        <div>
-                          <a href="#">Acerca de Moshiy</a>
-                          <a href="#">Politica de privacidad</a>
+                        <div class="aboutUs>
+                          <a href="/aboutus/us.html">Acerca de Moshiy</a>
+                          <a href="/aboutus/privacy-policy.html">Politica de privacidad</a>
                         </div>
                     </div>
                 </section>
