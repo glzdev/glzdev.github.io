@@ -414,7 +414,7 @@ function hTP() {
                             <p class="p-bottom">Y con cada palabra que encuentres, agregarás 7 segundos al tiempo limite.</p>
                         </div>
                         <div class="aboutUs>
-                          <a href="/aboutus/us.html">Acerca de Moshiy</a>
+                          <a href="/aboutus/aboutus.html">Acerca de Moshiy</a>
                           <a href="/aboutus/privacy-policy.html">Politica de privacidad</a>
                         </div>
                     </div>
